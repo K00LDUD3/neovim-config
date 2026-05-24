@@ -1,13 +1,16 @@
 local function enable_transparency()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 end
 
 return {
     {
         "folke/tokyonight.nvim",
+
         config = function()
+            require("tokyonight").setup({
+                transparent = true,
+            })
 
             vim.cmd.colorscheme("tokyonight")
 
@@ -23,14 +26,31 @@ return {
                 bold = true,
             })
 
-            -- Line numbers
+            -- Line numbers + gutter
             vim.api.nvim_set_hl(0, "LineNr", {
-                fg = "#c7c7c7", -- regular line numbers
+                fg = "#7a7a7a",
+                bg = "#111111",
             })
 
             vim.api.nvim_set_hl(0, "CursorLineNr", {
-                fg = "#ffe900", -- current line number
+                fg = "#ff843e",
+                bg = "#1a1a1a",
                 bold = true,
+            })
+
+            vim.api.nvim_set_hl(0, "SignColumn", {
+                bg = "#111111",
+            })
+
+            vim.api.nvim_set_hl(0, "FoldColumn", {
+                bg = "#111111",
+            })
+
+            -- Current line highlight
+            vim.opt.cursorline = true
+
+            vim.api.nvim_set_hl(0, "CursorLine", {
+                bg = "#161616",
             })
 
             enable_transparency()
@@ -39,6 +59,7 @@ return {
 
     {
         "nvim-lualine/lualine.nvim",
+
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },

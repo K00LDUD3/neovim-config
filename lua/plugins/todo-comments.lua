@@ -9,7 +9,9 @@ return {
     --},
     keywords = {
         -- your keywords here
-        PATH = { icon = "P", color = "#eca9ff" },
+        PATH = { icon = "\u{039e}", color = "#eca9ff" },
+        _ = { icon = "\u{f06e8}", color = "#EfEfEf" },
+        LINK = {icon = "@", color = "#ff843e"},
     },
     },
 }
@@ -22,3 +24,5 @@ return {
 -- PERF: could be optimized
 -- TODO: - 
 -- PATH: - path
+--_: - More concise option for "note"
+--LINK: links 

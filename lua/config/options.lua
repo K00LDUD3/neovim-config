@@ -13,8 +13,12 @@ vim.opt.backspace = { "indent", "eol", "start" }
 
 -- some comment asdf asd fasd fas fd
 
-
-
+vim.opt.breakindent = true
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
 
 
 

@@ -39,6 +39,8 @@ return {
             -- C/C++
             vim.lsp.config('clangd', {
                 capabilities = capabilities,
+                "--background-index",
+                "--completion-style=bundled",
             })
 
             -- Python type checker
