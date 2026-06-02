@@ -52,6 +52,22 @@ return {
             vim.api.nvim_set_hl(0, "CursorLine", {
                 bg = "#161616",
             })
+            
+            --NOTE: To prevet unused imports/variables from dimming beyond legibility
+            vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", {
+                fg = "#c0caf5",
+            })
+            vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", {
+                underline=false,
+            })
+            
+            --NOTE: to highlight python parameter variables just like c++
+            vim.api.nvim_set_hl(0, "@variable.parameter", {
+                fg = "#e0af68",
+            })
+            vim.api.nvim_set_hl(0, "@variable.parameter.python", {
+                fg = "#e0af68",
+            })
 
             enable_transparency()
         end

@@ -21,4 +21,28 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
 
+vim.diagnostic.config({
+    virtual_text = true,
+    virtual_lines = true,
+    underline = true,
+})
 
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+        severity_sort = true,
+    }
+)
+
+vim.g.lua_diagnostics_disable = {
+    "line-too-long",
+}
+
+
+--NOTE: For python parameter color highlight overrides
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "python" },
+    callback = function(args)
+        vim.treesitter.start(args.buf, "python")
+    end,
+})
