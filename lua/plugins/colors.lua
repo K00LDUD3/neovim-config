@@ -62,13 +62,27 @@ return {
             })
             
             --NOTE: to highlight python parameter variables just like c++
-            vim.api.nvim_set_hl(0, "@variable.parameter", {
-                fg = "#e0af68",
+           -- vim.api.nvim_set_hl(0, "@variable.parameter", {
+           --     fg = "#e0af68",
+           -- })
+           -- vim.api.nvim_set_hl(0, "@variable.parameter.python", {
+           --     fg = "#e0af68",
+           -- })
+
+           --NOTE: making string documentation greyer 
+            vim.api.nvim_set_hl(0, "@string.documentation", {
+                fg = "#a9b1d6",
             })
-            vim.api.nvim_set_hl(0, "@variable.parameter.python", {
-                fg = "#e0af68",
+            
+            --NOTE: module color different from "from" and "import"
+            vim.api.nvim_set_hl(0, "@module.python", {
+                fg = "#ff3b00",
             })
 
+            --NOTE: cpp variables a little Brighter
+            vim.api.nvim_set_hl(0, "@lsp.type.variable.cpp", {
+                fg = "#d6d6d6",
+            })
             enable_transparency()
         end
     },

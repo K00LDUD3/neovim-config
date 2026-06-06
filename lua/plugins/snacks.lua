@@ -7,6 +7,15 @@ return {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
+    animate = {
+        duration = {
+            step = 20,
+            total = 600,
+        },
+        easing = "outQuad",
+        fps = 165,
+    },
+
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     explorer = { enabled = false },
