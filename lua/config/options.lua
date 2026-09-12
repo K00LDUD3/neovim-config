@@ -27,12 +27,16 @@ vim.diagnostic.config({
     underline = true,
 })
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    {
-        severity_sort = true,
-    }
-)
+--vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--    vim.lsp.diagnostic.on_publish_diagnostics,
+--    {
+--        severity_sort = true,
+--    }
+--)
+
+vim.diagnostic.config({
+    severity_sort = true,
+})
 
 vim.g.lua_diagnostics_disable = {
     "line-too-long",
