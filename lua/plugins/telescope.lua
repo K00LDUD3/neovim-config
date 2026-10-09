@@ -17,9 +17,14 @@ return {
 
 		-- Find files relative to current buffer's directory
 		vim.keymap.set('n', '<leader>ff', function()
-			builtin.find_files({
-				cwd = vim.fn.expand('%:p:h'),
-			})
+			--builtin.find_files({
+		--		cwd = vim.fn.expand('%:p:h'),
+			--})
+            builtin.find_files({
+                cwd = vim.fn.expand('%:p:h'),
+                hidden = true,
+                no_ignore = true,
+            })
 		end, { desc = 'Find files in current buffer directory' })
 
 		-- Find files from git/project root
